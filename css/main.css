@@ -5,7 +5,7 @@
 }
 
 .sec {
-    padding: 100px 0;
+    padding: 60px 0;
 }
 
 .sec .tit {
@@ -33,7 +33,7 @@ body {
 .top_head {
     color: #fff;
     position: absolute;
-    right: 351px;
+    right: 361px;
     bottom: 45px;
     padding: 0 15px;
 
@@ -67,9 +67,11 @@ body {
 }
 
 .logo {
+    position: absolute;
     margin: 0 0 0 auto;
     color: #fff;
-    width: 11%;
+    width: 8%;
+    right: 1400px;
     padding-top: 25px;
 }
 
@@ -84,15 +86,19 @@ body {
 
 #header .gnb>ul {
     display: flex;
-    gap: 80px;
+    gap: 100px;
 }
 
 #header .service {
     margin: 0 0 0 50px;
     color: #fff;
+    display: flex;
+    gap: 20px;
     font-size: 22px;
     padding-top: 35px;
 }
+
+
 
 #main_visual {
     position: relative;
@@ -118,7 +124,7 @@ body {
     z-index: 999;
 }
 
-#header.on {
+/* #header.on {
     background: #fff;
 }
 
@@ -180,7 +186,7 @@ body {
 
 #header .gnb>ul>li .sub li a {
     display: block;
-}
+} */
 
 
 
@@ -208,16 +214,56 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding: 0 30px 0 30px;
     padding-bottom: 80px;
+    font-size: 19px;
+    font-weight: 500;
     gap: 30px;
+
 }
 
 .tit_manu a {
+    position: relative;
     border: 1px solid #222;
-    border-radius: 10%;
-    padding: 13px
+    border-radius: 10px;
+    padding: 13px;
+
 }
 
+/* 
+.tit_manu li a::before {
+    position: absolute;
+    content: "";
+    top: calc(50% - 300px);
+    left: calc(50% - 300px);
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #e50048 40%, #0086ce 60%) no-repeat;
+    background-image: auto;
+    animation: Ani 3s ease infinite;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+
+
+}
+
+.tit_manu a:hover::before {
+    opacity: 1;
+
+} */
+
+.tit_manu a:hover {
+    background: #e4007f;
+    color: white;
+
+}
+
+
+
+.card {
+    padding-bottom: 100px;
+}
 
 .card .inner {
     position: relative;
@@ -226,77 +272,87 @@ body {
     gap: 60px 30px;
     max-width: 1200px;
     margin: 0 auto;
+
     padding: 0 15px;
 
 }
 
 .card .inner>* {
     position: relative;
-    border: 1px solid #222;
-    border-radius: 10%;
+    border-radius: 8px;
     padding: 30px;
     background: #f9f9f9;
 }
 
-.customer .list li::before {
+/* .card .in_box {
+    border-radius: 10px;
+
+} */
+.in_box h2 {}
+
+
+.card .list li {
+    position: relative;
+}
+
+.card .list li::before {
+
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 0;
-    height: 0;
+    top: calc(50% - 300px);
+    left: calc(50% - 300px);
+    width: 600px;
+    height: 600px;
+    border-radius: 10px;
+    background-image: linear-gradient(45deg, #e50048 40%, #0086ce 60%);
+    animation: Ani 3s ease infinite;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
 
-    border-top: 1px solid red;
-    border-left: 1px solid #0c4ca3;
-    border-radius: 10%;
-    visibility: hidden;
-
-    transition: 0.5s;
 }
 
 
+@keyframes Ani {
+    0% {
+        transform: rotate(0);
+    }
 
-.customer li:hover::before {
-    width: 100%;
-    height: 100%;
+    50% {
+        transform: rotate(180deg);
+    }
 
-    visibility: visible;
+    100% {
+        transform: rotate(0);
+    }
 }
 
-.customer .list li::after {
-    content: "";
+.card .list li:hover::before {
+    opacity: 1;
+
+
+
+}
+
+.card .list li .in_box {
     position: absolute;
-    bottom: 0;
-    right: 0;
-    display: block;
-    width: 0;
-    height: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-    border-bottom: 1px solid #0c4ca3;
-    border-right: 1px solid #0c4ca3;
+    width: 95%;
+    height: 95%;
 
-    visibility: hidden;
-    border-radius: 10%;
-    transition: 0.5s;
-}
-
-.customer .list li:hover::after {
-    width: 100%;
-    height: 100%;
-
-    visibility: visible;
 }
 
 
 
-.customer .list h3 {
+.card .list h3 {
     font-size: 20px;
     font-weight: 300;
     margin: 0 0 10px 0;
 }
 
-.customer .nav {
+.card .nav {
     display: flex;
     max-width: 1200px;
     padding: 0 15px;
@@ -304,40 +360,112 @@ body {
     margin: 0 auto 50px auto;
 }
 
-.customer .nav>li {
+.card .nav>li {
     flex: 1;
 }
 
-.customer .nav>li::after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 5px;
-    background: #0c4ca3;
-    margin: 0 auto;
-    transition: 0.5s;
 
-}
-
-.customer .nav>li:hover::after {
+.card .nav>li:hover::after {
     width: 100%;
 }
 
-.customer .nav>li a {
+.card .nav>li a {
     /* 요소를 가운데 오게하는 옛날 방식 */
     display: block;
     text-align: center;
     line-height: 100px;
 }
 
-.customer .nav>li~li {
+.card .nav>li~li {
     border-left: 1px solid #ddd;
 }
 
+.box01 h3 {
+    color: #585858;
+}
+
+.list {}
+
+
+.guide .box {
+    height: 180px;
+    overflow: hidden;
+}
+
+
+.guide .inner .box1 .in_box {
+    background: url(../images/bunsansibo.jpg) no-repeat center center /cover;
+    border-radius: 10px;
+}
+
+.card .list {
+    position: relative;
+}
+
+.inner .box1 h3 {
+    position: absolute;
+    left: 170px;
+    top: 142px;
+    font-size: 22px;
+    color: white;
+    font-weight: 800;
+}
+
+
+.inner .box2 h3 {
+    position: absolute;
+    left: 180px;
+    top: 142px;
+    font-size: 22px;
+    color: white;
+    font-weight: 800;
+}
+
+.inner .box3 h3 {
+    position: absolute;
+    left: 200px;
+    top: 142px;
+    font-size: 22px;
+    color: white;
+    font-weight: 800;
+}
+
+.inner .box4 h3 {
+    position: absolute;
+    left: 200px;
+    top: 142px;
+    font-size: 22px;
+    color: white;
+    font-weight: 800;
+}
+
+
+.inner .box2 .in_box {
+    background: url(../images/soccer.jpg) no-repeat center center /cover;
+    border-radius: 10px;
+}
+
+
+.inner .box3 .in_box {
+    background: url(../images/tour_thum.jpg) no-repeat center center /cover;
+    border-radius: 10px;
+}
+
+
+.inner .box4 .in_box {
+    background: url(../images/main_2.jpg) no-repeat center center /cover;
+    border-radius: 10px;
+}
+
+
+
+
+
 
 .footer {
-    background: #444;
-    color: #fff;
+
+    background: #f9f9f9;
+    color: #222;
 }
 
 .footer .ft {
@@ -348,16 +476,25 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
+    height: 90px;
 }
 
-.footer .content ul {
+.footer .content .customer,
+.sns {
     display: flex;
+
     align-items: center;
+}
+
+.footer .content address ul {}
+
+.footer .content address ul li {
+    padding-bottom: 5px;
 }
 
 .footer .content li strong {
     font-weight: 500;
+
 }
 
 .footer .customer li~li::before {
@@ -389,78 +526,15 @@ body {
     padding: 5px;
     font-size: 20px;
 
-    background: #222;
+    background: #ccc;
 }
 
-.footer .link {
-    gap: 10px;
-}
-
-#fl {
-    outline: none;
-    border: 1px solid #ddd;
-    padding: 5px 20px;
-    background: #369;
-    color: #fff;
-}
-
-.family_link2 {
-    position: relative;
-}
-
-.family_link2 span {
-    display: block;
-    width: 150px;
-    line-height: 30px;
-    padding: 0 15px;
-
-    border: 1px solid #ddd;
-    background: #333;
-    color: #fff;
-
-    user-select: none;
-    cursor: pointer;
-}
-
-.family_link2 span i {
-    float: right;
-    line-height: 30px;
-}
-
-.family_link2 span.on i {
-    transform: rotate(180deg);
-}
-
-.family_link2 .fl2 ul {
-    position: absolute;
-    bottom: 31px;
-    left: 0;
-    right: 0;
-    background: #333;
-    color: #fff;
-    border: 1px solid #ddd;
-
-    display: none;
-    flex-direction: column;
-    align-items: stretch;
-}
-
-.family_link2 .fl2 ul.on {
-    display: flex;
-}
-
-.family_link2 .fl2 ul a {
-    display: block;
-    line-height: 30px;
-    padding: 0 15px;
-}
-
-.family_link2 .fl2 ul li~li {
-    border-top: 1px solid #ddd;
-}
 
 
 .to_top i {
+    position: absolute;
+    right: 19.5%;
+    bottom: -87%;
     background: black;
     color: #fff;
     font-size: 20px;
